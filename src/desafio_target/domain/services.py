@@ -2,7 +2,7 @@ from typing import Any, Dict, List
 import numpy as np
 
 
-def calcular_taxa_admnistracao(taxa: float, cotas_diarias: List[Dict[str, Any]]) -> List[float]:
+def calcular_taxa_administracao(taxa: float, cotas_diarias: List[Dict[str, Any]]) -> List[float]:
     
     if not cotas_diarias:
         return []
