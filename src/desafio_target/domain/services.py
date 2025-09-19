@@ -14,7 +14,7 @@ def calcular_taxa_admnistracao(taxa: float, cotas_diarias: List[Dict[str, Any]])
     valores_vetor = np.array(valores)          # Formato (N,)
     quantidades_matriz = np.array(quantidades) # Formato (N, M)
 
-    if quantidades_matriz == []:
+    if quantidades_matriz.size == 0:
         return []
     
     patrimonio_por_dia = quantidades_matriz * valores_vetor[:, np.newaxis] # Formato: (N, M)
