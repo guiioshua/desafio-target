@@ -2,10 +2,10 @@ from pydantic import BaseModel
 
 from typing import List
 
-class CotaDiaria(BaseModel):
+class CotaPorAcionista(BaseModel):
     valor: float
-    quantidades: List[float]
+    quantidade_por_acionista: List[float]
 
 class RequisicaoTaxa(BaseModel):
     taxa: float
-    cotas: List[float]
+    cotas_por_acionista: List[CotaPorAcionista]
