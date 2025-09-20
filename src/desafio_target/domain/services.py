@@ -2,14 +2,14 @@ from typing import Any, Dict, List
 import numpy as np
 
 
-def calcular_taxa_administracao(taxa: float, cotas_diarias: List[Dict[str, Any]]) -> List[float]:
+def calcular_taxa_administracao(taxa: float, cotas: List[Dict[str, Any]]) -> List[float]:
     
-    if not cotas_diarias:
+    if not cotas:
         return []
 
     # Um elemento de cada uma dessas listas para cada dia
-    valores = [dia['valor'] for dia in cotas_diarias]
-    quantidades = [dia['quantidades'] for dia in cotas_diarias]
+    valores = [dia['valor'] for dia in cotas]
+    quantidades = [dia['quantidades'] for dia in cotas]
 
     valores_vetor = np.array(valores)          # Formato (N,)
     quantidades_matriz = np.array(quantidades) # Formato (N, M)
