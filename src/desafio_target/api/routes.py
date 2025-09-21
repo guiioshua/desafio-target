@@ -13,4 +13,6 @@ def handler_calcular_taxa(body_model: RequisicaoTaxa) -> RespostaTaxa:
         taxa=body_model.taxa,
         cotas=body_model.model_dump()["cotas"])
     
-    return resposta_taxa
+    resposta_formatada = [round(taxa, 2) for taxa in resposta_taxa]
+    
+    return resposta_formatada
