@@ -1,13 +1,13 @@
 import numpy as np
-from desafio_target.domain.services import calcular_taxa_admnistracao
+from desafio_target.domain.services import calcular_taxa_administracao
 
 def test_fee_calculation_with_numpy():
     """
     Tests that the administration fee calculation is correct.
     """
     # 1. ARRANGE: INPUT PARA OS TESTES
-    taxa_input = 0.01
-    cotas_input = [
+    taxa = 0.01
+    cotas = [
         {"valor": 10.0, "quantidades": [100, 200, 50]},
         {"valor": 10.1, "quantidades": [100, 200, 50]},
         {"valor": 9.9,  "quantidades": [100, 210, 50]}, # Note a change for investor 1
@@ -26,19 +26,19 @@ def test_fee_calculation_with_numpy():
     expected_output = [expected_fee_0, expected_fee_1, expected_fee_2]
 
     # 2. ACT: FUNÇÃO SENDO TESTADA
-    actual_output = calcular_taxa_admnistracao(taxa_input, cotas_input)
+    actual_output = calcular_taxa_administracao(taxa, cotas)
 
     # 3. ASSERT: COMPARA OS DOIS ARRAYS APROXIMADAMENTE
     np.testing.assert_allclose(actual_output, expected_output)
 
 def test_fee_calculation_with_empty_input():
     # ARRANGE
-    taxa_input = 0.01
-    cotas_input = []
+    taxa = 0.01
+    cotas = []
     expected_output = []
 
     # ACT
-    actual_output = calcular_taxa_admnistracao(taxa_input, cotas_input)
+    actual_output = calcular_taxa_administracao(taxa, cotas)
 
     # ASSERT
     assert actual_output == expected_output
