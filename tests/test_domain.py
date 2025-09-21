@@ -5,7 +5,7 @@ def test_fee_calculation_with_numpy():
     """
     Tests that the administration fee calculation is correct.
     """
-    # 1. INPUT PARA OS TESTES
+    # 1. ARRANGE: INPUT PARA OS TESTES
     taxa_input = 0.01
     cotas_input = [
         {"valor": 10.0, "quantidades": [100, 200, 50]},
@@ -25,10 +25,10 @@ def test_fee_calculation_with_numpy():
     
     expected_output = [expected_fee_0, expected_fee_1, expected_fee_2]
 
-    # 2. FUNÇÃO SENDO TESTADA
+    # 2. ACT: FUNÇÃO SENDO TESTADA
     actual_output = calcular_taxa_admnistracao(taxa_input, cotas_input)
 
-    # 3. COMPARA OS DOIS ARRAYS APROXIMADAMENTE
+    # 3. ASSERT: COMPARA OS DOIS ARRAYS APROXIMADAMENTE
     np.testing.assert_allclose(actual_output, expected_output)
 
 def test_fee_calculation_with_empty_input():
