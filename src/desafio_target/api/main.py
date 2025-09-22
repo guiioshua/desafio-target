@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from .routes import route as api_router
+from .routes import router as api_router
 
 app = FastAPI(
     title="API de Cálculo de Taxa de Administração de Fundos",
