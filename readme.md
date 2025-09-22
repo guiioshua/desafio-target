@@ -42,7 +42,7 @@ Para executar o projeto localmente, siga os passos abaixo.
     python -m venv venv
 
     # Ativar no Windows (Git Bash) ou Linux/macOS
-    source venv/bin/activate
+    source venv/Scripts/activate
     ```
 
 3.  **Instalar as Dependências**
